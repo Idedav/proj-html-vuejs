@@ -1,13 +1,29 @@
 <script>
+import Navigation from './partials/Navigation.vue';
+import Jumbotron from './partials/Jumbotron.vue';
+
 export default {
-    name:'Header'
+    name:'Header',
+    components:{
+        Navigation,
+        Jumbotron
+    }
 }
 </script>
 
 <template>
-  <h1>HEADER</h1>
+    <div class="dc-container">        
+        <Navigation />
+        <Jumbotron />
+    </div>
 </template>
 
-<style>
-
+<style lang="scss" scoped>
+    .dc-container{
+        width: 100%;
+        height: 1000px;
+        background-image: url('../assets/img/hero-header-bakery.jpg');
+        background-size: cover;
+        background-position: center;
+    }
 </style>

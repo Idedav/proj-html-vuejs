@@ -18,6 +18,6 @@ export default {
   <Footer />
 </template>
 
-<style>
-
+<style lang="scss">
+@use './scss/Main.scss';
 </style>
