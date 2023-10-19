@@ -24,6 +24,6 @@ export default {
         height: 1000px;
         background-image: url('../assets/img/hero-header-bakery.jpg');
         background-size: cover;
-        background-position: center;
+        background-position: bottom;
     }
 </style>

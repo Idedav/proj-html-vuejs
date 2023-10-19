@@ -16,3 +16,32 @@ h6{
     font-family: $font-title;
     font-weight: bold;
 }
+
+p,
+span{
+    color: $secondary-font-color;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+.btn-white{
+    background-color: $primary-background-color;
+    color: $primary-font-color;
+    &:hover{
+        background-color: $primary-font-color;
+        color: $primary-background-color;
+    }
+}
+
+.btn-purple{
+    background-color: $primary-font-color;
+    color: $primary-background-color;
+    &:hover{
+        background-color: #F0EDF5;
+        color: $primary-font-color;
+    }
+}
