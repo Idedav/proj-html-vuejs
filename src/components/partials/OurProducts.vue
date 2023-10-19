@@ -1,0 +1,100 @@
+<script>
+export default {
+    name:'OurProducts'
+}
+</script>
+
+<template>
+  
+    <div class="container-fluid d-flex">
+
+        <div class="text-container">
+            <span>OUR PRODUCTS</span>
+            <h2>All our delectable pastries are backed fresh in our Kitchen very morning, and are made with all natural, all organic ingredients.</h2>
+            <button class="btn-purple">Start Shopping</button>
+        </div>
+
+        <div class="products-container d-flex justify-content-center">
+
+            <div class="carousel d-flex justify-content-between">
+
+                <button class="btn-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="product d-flex">
+                    <div class="image">
+                        <img src="../../assets/img/choco-chip-cookies.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="product d-flex">
+                    <div class="image">
+                        <img src="../../assets/img/strawberry-jam-cookies.jpg" alt="">
+                    </div>
+                </div>
+
+                <button class="btn-right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</template>
+
+<style lang="scss" scoped>
+@use '../../scss/partials/variables' as *;
+.container-fluid{
+    margin-top: 125px;
+    .text-container{
+        width: 30%;
+        h2{
+            margin: 20px 0px;
+        }
+        button{
+            margin-top: 20px;
+        }
+    }
+    .products-container{
+        width: 70%;
+        height: 700px;
+        .carousel{
+            position: relative;
+            width: 1000px;
+            height: 600px;
+            .product{
+                width: 49%;
+                height: 100%;
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+            button{
+                width: 50px;
+                height: 100px;
+                padding: 0px;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 0px;
+                color: white;
+                background-color: $primary-font-color;
+                opacity: .5;
+            }
+            .btn-right{
+                right: 0px;
+            }
+        }
+    }
+}
+
+</style>

@@ -22,11 +22,15 @@ export default {
       
     </div>
 
-    <div class="text-cotnainer my-5">
-      <span>FRESH & TASTY BAKERY EVERY DAY</span>
-      <h1>The Perfect Fresh Bread</h1>
-      <p>Cras consequat lectus vestibulum tortor pulvinar, quis euismod nisl vaius. Aliquam erat volutpat. Nullam quis sagittis nibh ac nulla id orci tempor.</p>
-      <button class="btn-white">Explore our products</button>
+    <div class="dc-container">
+
+      <div class="text-container my-5">
+        <span>FRESH & TASTY BAKERY EVERY DAY</span>
+        <h1>The Perfect Fresh Bread</h1>
+        <p>Cras consequat lectus vestibulum tortor pulvinar, quis euismod nisl vaius. Aliquam erat volutpat. Nullam quis sagittis nibh ac nulla id orci tempor.</p>
+        <button class="btn-white">Explore our products</button>
+      </div>
+
     </div>
 
   </div>
@@ -62,19 +66,19 @@ export default {
       }
     }
   }
-  .text-cotnainer{
-    width: 25%;
-    margin-left: 125px;
-    h1{
-      margin: 20px 0px;
-      font-size: 3rem;
-    }
-    span{
-      font-size: .7rem;
-    }
-    p{
-      font-size: 1.2rem;
-      margin: 30px 0px;
+  .dc-container{
+    width: 90%;
+    margin: 0 auto;
+    .text-container{
+      width: 30%;
+      h1{
+        margin: 20px 0px;
+        font-size: 3rem;
+      }
+      p{
+        font-size: 1.2rem;
+        margin: 30px 0px;
+      }
     }
   }
 }
