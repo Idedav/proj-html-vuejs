@@ -36,6 +36,7 @@ export default {
 
 .dc-container{
   width: 90%;
+  max-width: 1920px;
   margin: 0 auto;
 }
 

@@ -28,6 +28,7 @@ export default {
   height: 100%;
   .dc-container{
     width: 90%;
+    max-width: 1920px;
     margin: 350px auto;
     .text-container{
       width: 20%;
