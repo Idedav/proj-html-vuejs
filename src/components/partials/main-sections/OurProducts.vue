@@ -14,27 +14,27 @@ export default {
             <button class="btn-purple">Start Shopping</button>
         </div>
 
-        <div class="products-container d-flex justify-content-center">
+        <div class="products-container d-flex justify-content-end">
 
             <div class="carousel d-flex justify-content-between">
 
-                <button class="btn-left">
+                <button class="btn-carousel btn-left">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
 
                 <div class="product d-flex">
                     <div class="image">
-                        <img src="../../assets/img/choco-chip-cookies.jpg" alt="">
+                        <img src="../../../assets/img/choco-chip-cookies.jpg" alt="">
                     </div>
                 </div>
 
                 <div class="product d-flex">
                     <div class="image">
-                        <img src="../../assets/img/strawberry-jam-cookies.jpg" alt="">
+                        <img src="../../../assets/img/strawberry-jam-cookies.jpg" alt="">
                     </div>
                 </div>
 
-                <button class="btn-right">
+                <button class="btn-carousel btn-right">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
 
@@ -47,7 +47,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../../scss/partials/variables' as *;
+@use '../../../scss/partials/variables' as *;
 .container-fluid{
     margin-top: 125px;
     .text-container{
@@ -61,13 +61,13 @@ export default {
     }
     .products-container{
         width: 70%;
-        height: 700px;
+        height: 900px;
         .carousel{
             position: relative;
-            width: 1000px;
-            height: 600px;
+            width: 90%;
+            height: 100%;
             .product{
-                width: 49%;
+                width: calc(100% / 2 - 10px);
                 height: 100%;
                 .image{
                     width: 100%;
@@ -77,21 +77,6 @@ export default {
                         height: 100%;
                     }
                 }
-            }
-            button{
-                width: 50px;
-                height: 100px;
-                padding: 0px;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                border-radius: 0px;
-                color: white;
-                background-color: $primary-font-color;
-                opacity: .5;
-            }
-            .btn-right{
-                right: 0px;
             }
         }
     }

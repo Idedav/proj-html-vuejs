@@ -47,7 +47,7 @@ export default {
           {
             href: '#',
             text: '',
-            icon: 'fa-solid fa-cart-shopping'
+            icon: 'fa-solid fa-cart-shopping',
           },
         ]
       }

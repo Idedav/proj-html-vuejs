@@ -57,6 +57,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-position: center;
   }
 
   .text-container{
@@ -69,10 +71,9 @@ export default {
     }
   }
   .corporate{
-    background-image: url(../../assets/img/corporate-bg.jpg);
-    background-size: cover;
+    background-image: url(../../../assets/img/corporate-bg.jpg);
     &:hover{
-      background-image: url(../../assets/img/corporate-hover-bg.jpg);
+      background-image: url(../../../assets/img/corporate-hover-bg.jpg);
     }
     &:hover .text-container{
       display: flex;
@@ -80,10 +81,9 @@ export default {
   }
 
   .weddings{
-    background-image: url(../../assets/img/wedding-bg.jpg);
-    background-size: cover;
+    background-image: url(../../../assets/img/wedding-bg.jpg);
     &:hover{
-      background-image: url(../../assets/img/wedding-hover-bg.jpg);
+      background-image: url(../../../assets/img/wedding-hover-bg.jpg);
     }
     &:hover .text-container{
       display: flex;

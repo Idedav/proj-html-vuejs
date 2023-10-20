@@ -1,11 +1,11 @@
 <script>
-import OurProducts from './partials/OurProducts.vue';
-import SpecialMoments from './partials/SpecialMoments.vue';
-import Shop from './partials/Shop.vue';
-import AboutUs from './partials/AboutUs.vue';
-import Locations from './partials/Locations.vue';
-import Social from './partials/Social.vue';
-import Delivery from './partials/Delivery.vue';
+import OurProducts from './partials/main-sections/OurProducts.vue';
+import SpecialMoments from './partials/main-sections/SpecialMoments.vue';
+import Shop from './partials/main-sections/Shop.vue';
+import AboutUs from './partials/main-sections/AboutUs.vue';
+import Locations from './partials/main-sections/Locations.vue';
+import Social from './partials/main-sections/Social.vue';
+import Delivery from './partials/main-sections/Delivery.vue';
 export default {
     name:'Main',
     components:{
