@@ -103,7 +103,7 @@ export default {
     position: absolute;
     bottom: 0;
     span{
-      color: rgb(186, 183, 183);
+      color: rgb(181, 180, 180);
     }
     p{
       margin: 20px 0px;
@@ -121,7 +121,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(0, 0, 0, .5);
 }
 
 .tell-us,
