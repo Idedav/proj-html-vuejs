@@ -1,6 +1,25 @@
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { store } from '../../../data/store';
 export default {
-    name:'OurProducts'
+    name:'OurProducts',
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      return {
+        modules: [Navigation],
+      };
+    },
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
@@ -15,30 +34,28 @@ export default {
         </div>
 
         <div class="products-container d-flex justify-content-end">
+                
+                <swiper
+                class="carousel d-flex justify-content-between mySwiper"
+                :slidesPerView="2"
+                :spaceBetween="20"
+                :loop="true"
+                :pagination="{
+                clickable: true,
+                }"
+                :navigation="true"
+                :modules="modules"
+                >
 
-            <div class="carousel d-flex justify-content-between">
+                    <swiper-slide
+                    class="product"
+                    v-for="product in store"
+                    :key="product.id"
+                    >
+                        <img :src="`/src/assets/img/${product.image}`" alt="">
+                    </swiper-slide>
 
-                <button class="btn-carousel btn-left">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="product d-flex">
-                    <div class="image">
-                        <img src="../../../assets/img/choco-chip-cookies.jpg" alt="">
-                    </div>
-                </div>
-
-                <div class="product d-flex">
-                    <div class="image">
-                        <img src="../../../assets/img/strawberry-jam-cookies.jpg" alt="">
-                    </div>
-                </div>
-
-                <button class="btn-carousel btn-right">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-
-            </div>
+                </swiper>
 
         </div>
 
@@ -61,23 +78,17 @@ export default {
     }
     .products-container{
         width: 70%;
-        height: 900px;
+        height: 700px;
+        margin-left: 80px;
         .carousel{
             position: relative;
-            width: 90%;
+            width: 100%;
             height: 100%;
-            .product{
-                width: calc(100% / 2 - 10px);
+            img{
+                width: 100%;
                 height: 100%;
-                .image{
-                    width: 100%;
-                    height: 100%;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
                 }
-            }
+                
         }
     }
 }

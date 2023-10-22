@@ -1,6 +1,25 @@
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { store } from '../../../data/store';
 export default {
-    name:'Shop'
+    name:'Shop',
+    components: {
+      Swiper,
+      SwiperSlide,
+    },
+    setup() {
+      return {
+        modules: [Navigation],
+      };
+    },
+    data(){
+      return{
+        store
+      }
+    }
 }
 </script>
 
@@ -15,69 +34,31 @@ export default {
 
     <div class="products-container d-flex justify-content-end">
 
-      <div class="carousel d-flex justify-content-between">
+      <swiper
+                class="carousel d-flex justify-content-between mySwiper"
+                :slidesPerView="4"
+                :spaceBetween="10"
+                :loop="true"
+                :pagination="{
+                clickable: true,
+                }"
+                :navigation="true"
+                :modules="modules"
+                >
 
-        <button class="btn-carousel btn-left">
-          <i class="fa-solid fa-chevron-left"></i>
-        </button>
+                    <swiper-slide
+                    class="product"
+                    v-for="product in store"
+                    :key="product.id"
+                    >
+                        <img :src="`/src/assets/img/${product.image}`" alt="">
+                        <div class="text text-center">
+                          <h6>{{ product.name }}</h6>
+                          <p>${{ product.prices[0] }} - ${{ product.prices[1] }}</p>
+                        </div>
+                    </swiper-slide>
 
-        <div class="product">
-
-          <div class="image">
-            <img src="../../../assets/img/cherry-cake.jpg" alt="">
-          </div>
-
-          <div class="text text-center">
-            <h3>Strawberry cake</h3>
-            <p>$19.00 - $39.00</p>
-          </div>
-
-        </div>
-
-        <div class="product">
-
-          <div class="image">
-            <img src="../../../assets/img/cookies-with-ice-cream.jpg" alt="">
-          </div>
-
-          <div class="text text-center">
-            <h3>Strawberry cake</h3>
-            <p>$19.00 - $39.00</p>
-          </div>
-
-        </div>
-
-        <div class="product">
-
-          <div class="image">
-            <img src="../../../assets/img/choco-chip-cookies.jpg" alt="">
-          </div>
-
-          <div class="text text-center">
-            <h3>Strawberry cake</h3>
-            <p>$19.00 - $39.00</p>
-          </div>
-
-        </div>
-
-        <div class="product">
-
-          <div class="image">
-            <img src="../../../assets/img/glazed-pancake-with-lemon.jpg" alt="">
-          </div>
-
-          <div class="text text-center">
-            <h3>Strawberry cake</h3>
-            <p>$19.00 - $39.00</p>
-          </div>
-
-        </div>
-
-        <button class="btn-carousel btn-right">
-          <i class="fa-solid fa-chevron-right"></i>
-        </button>
-
-      </div>
+                </swiper>
 
     </div>
 
@@ -101,23 +82,17 @@ export default {
 
   .products-container{
     width: 80%;
-    height: 500px;
+    height: 600px;
+    margin-left: 60px;
     .carousel{
       position: relative;
-      width: 90%;
+      width: 100%;
       height: 100%;
-      .product{
-        width: calc(100% / 4 - 10px);
-        height: 100%;
-        .image{
-          width: 100%;
-          height: 80%;
-          img{
-            width: 100%;
-            height: 100%;
-          }
-        }
-        .text{
+      img{
+        width: 100%;
+        height: 80%;
+      }
+      .text{
           width: 100%;
           height: 20%;
           padding: 20px;
@@ -126,7 +101,6 @@ export default {
           }
         }
       }
-    }
   }
 
 </style>

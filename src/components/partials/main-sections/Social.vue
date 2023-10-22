@@ -78,7 +78,7 @@ export default {
 
 .col-3,
 .col-6{
-  height: 500px;
+  height: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
