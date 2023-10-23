@@ -1,6 +1,12 @@
 <script>
+import { specialMoments } from '../../../data/SpecialMoments'
 export default {
-    name:'SpecialMoments'
+    name:'SpecialMoments',
+    data(){
+      return{
+        specialMoments
+      }
+    }
 }
 </script>
 
@@ -12,25 +18,32 @@ export default {
       <h2>Baking Special Moments</h2>
     </div>
 
-    <div class="images-container d-flex justify-content-between">
+    <div class="images-container">
 
-      <div class="corporate">
+      <div class="row">
 
-          <div class="text-container flex-column align-items-center">
-            <span>INTERNATIONAL BAKERY</span>
-            <h2>CORPORATE EVENTS</h2>
-            <button class="btn-purple">Explore more</button>
+        <div v-for="(moment, index) in specialMoments"
+        :key="index"
+        class="col-6 d-flex justify-content-center align-items-center">
+
+          <div class="image-container">
+            <div class="image"
+            :style="`background-image: url(/src/assets/img/${moment.image});`">
+            </div>
+  
+            <div :style="`background-image: url(/src/assets/img/${moment.hoverImage});`"
+            class="hover-image justify-content-center align-items-center">
+              <div class="text-container text-center">
+                <span>{{ moment.text.intestation }}</span>
+                <h2>{{ moment.text.title }}</h2>
+                <button class="btn-purple">Explore more</button>
+            </div>
           </div>
 
-      </div>
+        </div>
 
-      <div class="weddings">
 
-          <div class="text-container flex-column align-items-center">
-            <span>PRIVATE DINING HALL</span>
-            <h2>Wedding & Parties</h2>
-            <button class="btn-purple">Explore more</button>
-          </div>
+        </div>
 
       </div>
 
@@ -47,45 +60,32 @@ export default {
   }
 }
 
-.images-container{
-  width: 100%;
-
-  .corporate,
-  .weddings{
-    width: 48%;
-    height: 900px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-size: cover;
+.col-6{
+  height: 800px;
+  .image-container{
+    width: 95%;
+    height: 95%;
     background-position: center;
-  }
-
-  .text-container{
-    display: none;
-    span{
-      color: #D2D3D4;
+    background-size: cover;
+    .image,
+    .hover-image{
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
     }
-    h2{
-      color: white;
+    .hover-image{
+      display: none;
+      .text-container{
+        h2{
+          color: white;
+        }
+      }
     }
-  }
-  .corporate{
-    background-image: url(../../../assets/img/corporate-bg.jpg);
-    &:hover{
-      background-image: url(../../../assets/img/corporate-hover-bg.jpg);
+    &:hover .image{
+      display: none;
     }
-    &:hover .text-container{
-      display: flex;
-    }
-  }
-
-  .weddings{
-    background-image: url(../../../assets/img/wedding-bg.jpg);
-    &:hover{
-      background-image: url(../../../assets/img/wedding-hover-bg.jpg);
-    }
-    &:hover .text-container{
+    &:hover .hover-image{
       display: flex;
     }
   }
