@@ -1,55 +1,10 @@
 <script>
+import { headerMenu } from '../../data/menus';
 export default {
     name:'Navigation',
     data(){
       return{
-        mainMenu:[
-          {
-            href: '#',
-            text: 'HOME',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'SHOP',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'ABOUT',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'GALLERY',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'LOCATION',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'JOURNAL',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'CONTACT',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: 'MY ACCOUNT',
-            icon: ''
-          },
-          {
-            href: '#',
-            text: '',
-            icon: 'fa-solid fa-cart-shopping',
-          },
-        ]
+        headerMenu
       }
     }
 }
@@ -65,8 +20,8 @@ export default {
     
     <nav class="m-3 d-flex align-items-center">
         <ul class="d-flex list-unstyled">
-            <li v-for="(menu, index) in mainMenu"
-            :key="index"><a href="#">
+            <li v-for="(menu, index) in headerMenu"
+            :key="index"><a :href="`${menu.href}`">
               {{ menu.text }}
               <i :class="menu.icon"></i>
             </a></li>

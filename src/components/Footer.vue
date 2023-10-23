@@ -1,6 +1,12 @@
 <script>
+import { footerMenu } from '../data/menus';
 export default {
-    name:'Footer'
+    name:'Footer',
+    data(){
+      return{
+        footerMenu
+      }
+    }
 }
 </script>
 
@@ -20,14 +26,14 @@ export default {
 
           <nav>
             <ul class="d-flex list-unstyled">
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Locations</a></li>
-              <li><a href="#">Journal</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Orders</a></li>
-              <li><a href="#"><i class="fa-solid fa-cart-shopping"></i><span>0</span></a></li>
+              <li v-for="(menu, index) in footerMenu"
+              :key="index">
+                <a :href="`${menu.href}`">
+                  {{ menu.text }}
+                  <i :class="`${menu.icon}`"></i>
+                  <span v-if="!isNaN(menu.counter)">{{ menu.counter }}</span>
+                </a>
+              </li>
             </ul>
           </nav>
 
