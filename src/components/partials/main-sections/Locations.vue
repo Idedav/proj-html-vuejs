@@ -1,6 +1,12 @@
 <script>
+import { locations } from '../../../data/Locations';
 export default {
-    name:'Locations'
+    name:'Locations',
+    data(){
+      return{
+        locations
+      }
+    }
 }
 </script>
 
@@ -17,56 +23,29 @@ export default {
 
       <div class="col d-flex">
 
-        <div class="location new-york">
+        <div v-for="(location, index) in locations"
+        :key="index"
+        :style="`background-color:${location.color}`"
+        class="location new-york">
 
           <div class="image">
-            <img src="../../../assets/img/new-york-bk.jpg" alt="">
+            <img :src="`/src/assets/img/${location.image}`" alt="">
           </div>
           
           <div class="text-container d-flex flex-column justify-content-center align-items-center text-center">
             
-            <h2>New York</h2>
+            <h2>{{ location.title }}</h2>
 
             <div class="references d-flex justify-content-between">
 
               <div>
                 <span>CALL US</span>
-                <p>1.800.458.556</p>
+                <p>{{ location.number }}</p>
               </div>
 
               <div>
                 <span>OPEN ALL WEEK</span>
-                <p>9:00 AM - 6:00 PM</p>
-              </div>
-
-              <button class="btn-white">View Map</button>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="location london">
-
-          <div class="image">
-            <img src="../../../assets/img/london-bk.jpg" alt="">
-          </div>
-
-          <div class="text-container d-flex flex-column justify-content-center align-items-center text-center">
-            
-            <h2>London</h2>
-
-            <div class="references d-flex justify-content-between">
-
-              <div>
-                <span>CALL US</span>
-                <p>1.800.458.556</p>
-              </div>
-
-              <div>
-                <span>OPEN ALL WEEK</span>
-                <p>9:00 AM - 6:00 PM</p>
+                <p>{{ location.openingTime }} - {{ location.closingTime }}</p>
               </div>
 
               <button class="btn-white">View Map</button>
@@ -89,12 +68,6 @@ export default {
 
 .col{
   height: 800px;
-  .new-york{
-    background-color: #F1F9FB;
-  }
-  .london{
-    background-color: #FAF3E3;
-  }
   .location{
     width: 50%;
     height: 100%;
