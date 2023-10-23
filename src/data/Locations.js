@@ -1,4 +1,5 @@
-const locations = [
+import { reactive } from "vue";
+const locations = reactive([
     {
         image: 'new-york-bk.jpg',
         title: 'New York',
@@ -15,6 +16,6 @@ const locations = [
         closingTime: '6:00 PM',
         color: '#FAF3E3'
     }
-];
+]);
 
 export { locations };

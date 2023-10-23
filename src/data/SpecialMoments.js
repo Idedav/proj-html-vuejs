@@ -1,4 +1,5 @@
-const specialMoments =  [
+import { reactive } from "vue";
+const specialMoments =  reactive([
     {
         image: 'corporate-bg.jpg',
         hoverImage: 'corporate-hover-bg.jpg',
@@ -15,7 +16,7 @@ const specialMoments =  [
             title: 'Weddings & Parties'
         }
     }
-] 
+]) 
 
 
 export { specialMoments };

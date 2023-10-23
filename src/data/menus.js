@@ -1,4 +1,5 @@
-const headerMenu = [
+import { reactive } from "vue";
+const headerMenu = reactive([
     {
       href: '#',
       text: 'HOME',
@@ -44,9 +45,9 @@ const headerMenu = [
       text: '',
       icon: 'fa-solid fa-cart-shopping',
     },
-  ];
+  ]);
 
-  const footerMenu = [
+  const footerMenu = reactive([
     {
       href: '#',
       text: 'Shop',
@@ -88,6 +89,6 @@ const headerMenu = [
       icon: 'fa-solid fa-cart-shopping',
       counter: 0
     },
-  ];
+  ]);
 
   export { headerMenu, footerMenu };

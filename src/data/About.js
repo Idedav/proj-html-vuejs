@@ -1,4 +1,5 @@
-const aboutUs = [
+import { reactive } from "vue";
+const aboutUs = reactive([
     {
         img:'bakery-process-1.jpg',
         title: 'Tell us what you have in mind',
@@ -23,6 +24,6 @@ const aboutUs = [
         text: 'Cras consequat lectus vestibulum tortor pulvinar, quis euismod nisl varius. Ut eu laorest ex. Aliquam erat volutpat. Nullam quis sagittis nibh. Morbi consectetur ultricies ante ac congue. Donec lorem erat, finibus in velit placerat, ruturm augue.',
         half: false
     },
-]
+]);
 
 export { aboutUs };

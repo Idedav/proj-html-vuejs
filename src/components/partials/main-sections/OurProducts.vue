@@ -1,24 +1,9 @@
 <script>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { store } from '../../../data/store';
+import SwiperShort from '../../swipers/SwiperShort.vue';
 export default {
     name:'OurProducts',
-    components: {
-      Swiper,
-      SwiperSlide,
-    },
-    setup() {
-      return {
-        modules: [Navigation],
-      };
-    },
-    data(){
-        return{
-            store
-        }
+    components:{
+        SwiperShort
     }
 }
 </script>
@@ -34,28 +19,8 @@ export default {
         </div>
 
         <div class="products-container d-flex justify-content-end">
-                
-                <swiper
-                class="carousel d-flex justify-content-between mySwiper"
-                :slidesPerView="2"
-                :spaceBetween="20"
-                :loop="true"
-                :pagination="{
-                clickable: true,
-                }"
-                :navigation="true"
-                :modules="modules"
-                >
 
-                    <swiper-slide
-                    class="product"
-                    v-for="product in store"
-                    :key="product.id"
-                    >
-                        <img :src="`/src/assets/img/${product.image}`" alt="">
-                    </swiper-slide>
-
-                </swiper>
+            <SwiperShort />
 
         </div>
 
@@ -78,18 +43,8 @@ export default {
     }
     .products-container{
         width: 70%;
-        height: 700px;
+        height: 600px;
         margin-left: 80px;
-        .carousel{
-            position: relative;
-            width: 100%;
-            height: 100%;
-            img{
-                width: 100%;
-                height: 100%;
-                }
-                
-        }
     }
 }
 
