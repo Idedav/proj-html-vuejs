@@ -76,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 
 .col-12{
-  height: 600px;
+  height: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;

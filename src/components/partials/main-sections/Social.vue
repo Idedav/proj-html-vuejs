@@ -1,6 +1,12 @@
 <script>
+import { social } from '../../../data/social';
 export default {
-    name:'Social'
+    name:'Social',
+    data(){
+      return{
+        social
+      }
+    }
 }
 </script>
 
@@ -8,12 +14,14 @@ export default {
 
   <div class="container-fluid">
 
-    <div class="row">
+    <div class="row d-flex">
       
-      <div class="col-3">
+      <div v-for="(image, index) in social"
+      :key="index"
+      class="col-3">
 
         <div class="image">
-          <img src="../../../assets/img/social-1.jpg" alt="">
+          <img :src="`/src/assets/img/${image}`" alt="">
         </div>
 
       </div>
@@ -24,46 +32,6 @@ export default {
           <span>MADE FOR SHARING</span>
           <h2>Let's stay in touch</h2>
           <button class="btn-purple"><i class="fa-brands fa-instagram"></i> Follow Us</button>
-        </div>
-
-      </div>
-
-      <div class="col-3">
-
-        <div class="image">
-          <img src="../../../assets/img/social-2.jpg" alt="">
-        </div>
-
-      </div>
-
-      <div class="col-3">
-
-        <div class="image">
-          <img src="../../../assets/img/social-3.jpg" alt="">
-        </div>
-
-      </div>
-
-      <div class="col-3">
-
-        <div class="image">
-          <img src="../../../assets/img/social-4.jpg" alt="">
-        </div>
-
-      </div>
-
-      <div class="col-3">
-
-        <div class="image">
-          <img src="../../../assets/img/social-5.jpg" alt="">
-        </div>
-
-      </div>
-
-      <div class="col-3">
-
-        <div class="image">
-          <img src="../../../assets/img/social-6.jpg" alt="">
         </div>
 
       </div>
@@ -82,6 +50,14 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.col-3:first-child{
+  order: 0;
+}
+
+.col-3{
+  order: 1;
 }
 
 .text-container,

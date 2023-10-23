@@ -58,7 +58,7 @@ export default {
                         </div>
                     </swiper-slide>
 
-                </swiper>
+      </swiper>
 
     </div>
 
