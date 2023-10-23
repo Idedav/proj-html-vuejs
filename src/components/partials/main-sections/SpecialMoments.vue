@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid d-flex flex-column">
+  <div class="container-fluid d-flex flex-column section-container">
 
     <div class="text-container d-flex flex-column align-items-center my-4">
       <span>CORPORATE & WEDDINGS</span>

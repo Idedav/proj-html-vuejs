@@ -12,7 +12,7 @@ export default {
 
 <template>
 
-  <div class="container-fluid my-5">
+  <div class="container-fluid section-container">
 
     <div class="text-container text-center">
       <span>LOCATIONS</span>

@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid d-flex">
+  <div class="container-fluid d-flex section-container">
 
     <div class="text-container text-center">
       <h2>Find a freshly baked products perfect for you</h2>

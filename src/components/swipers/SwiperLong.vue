@@ -19,6 +19,14 @@ export default {
         return{
             store
         }
+    },
+    methods:{
+      formatPrices(number){
+        return new Intl.NumberFormat('en-US',{
+            style: 'currency',
+            currency: 'USD'
+           }).format(number);
+      }
     }
 }
 </script>
@@ -45,7 +53,7 @@ export default {
             <img :src="`/src/assets/img/${product.image}`" alt="">
             <div class="text text-center">
                 <h6>{{ product.name }}</h6>
-                <p>${{ product.prices[0] }} - ${{ product.prices[1] }}</p>
+                <p>{{ formatPrices(product.smallBacketPrice) }} - {{ formatPrices(product.bigBacketPrice) }}</p>
             </div>
         </swiper-slide>
 

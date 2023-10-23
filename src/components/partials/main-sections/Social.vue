@@ -12,7 +12,7 @@ export default {
 
 <template>
 
-  <div class="container-fluid">
+  <div class="container-fluid section-container">
 
     <div class="row d-flex">
       

@@ -6,7 +6,7 @@ export default {
 
 <template>
 
-  <div class="container-fluid my-5">
+  <div class="container-fluid">
 
     <div class="container d-flex align-items-center">
 

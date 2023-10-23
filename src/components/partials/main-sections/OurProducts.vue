@@ -10,7 +10,7 @@ export default {
 
 <template>
   
-    <div class="container-fluid d-flex">
+    <div class="container-fluid d-flex section-container">
 
         <div class="text-container">
             <span>OUR PRODUCTS</span>
