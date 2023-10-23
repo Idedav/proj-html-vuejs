@@ -61,7 +61,7 @@ export default {
 }
 
 .col-6{
-  height: 800px;
+  height: 720px;
   .image-container{
     width: 95%;
     height: 95%;

@@ -7,4 +7,4 @@ const social = [
     'social-6.jpg',
 ];
 
-export { social }
+export { social };

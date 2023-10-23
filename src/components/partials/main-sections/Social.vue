@@ -46,10 +46,13 @@ export default {
 
 .col-3,
 .col-6{
-  height: 430px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.col-3{
+  aspect-ratio: 1 / 1;
 }
 
 .col-3:first-child{
