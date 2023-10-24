@@ -1,10 +1,12 @@
 <script>
 import { footerMenu } from '../data/menus';
+import { socialLinks } from '../data/socialLinks';
 export default {
     name:'Footer',
     data(){
       return{
-        footerMenu
+        footerMenu,
+        socialLinks
       }
     }
 }
@@ -60,10 +62,10 @@ export default {
 
           <div class="social">
             <ul class="d-flex list-unstyled">
-              <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+              <li v-for="(social, index) in socialLinks" 
+              :key="index">
+                <a :href="`${social.href}`"><i :class="`fa-brands ${social.icon}`"></i></a>
+              </li>
             </ul>
           </div>
 
